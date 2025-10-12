@@ -1,0 +1,25 @@
+integer stores signed
+reg stores unsigned
+
+realnumber constants and real registers -can be specifiedin scientifc and decimal notation
+
+delta=4e10;-scientific 
+delta=2.14;- decimal
+
+integer i;
+
+i=delta; then the value will be rounded off to nearest value 
+
+time x;- atleast 64bt width,but dependson the implementation
+initial 
+  x=$time;
+
+vectors,arrays
+reg [7:0]a[0:4];
+integer a[3:0][6:0];
+reg [4:0] a1 [3:0][6:0];
+
+parameters- used to define the constants 
+localparameters - cant be changed - the state encoding for a state machine can be defined using localparam
+whereas the parameters can be changed while the module instantiation or using defparam
+
