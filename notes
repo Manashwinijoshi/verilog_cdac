@@ -23,3 +23,52 @@ parameters- used to define the constants
 localparameters - cant be changed - the state encoding for a state machine can be defined using localparam
 whereas the parameters can be changed while the module instantiation or using defparam
 
+
+Strings in Verilog are purely for simulation-time convenience, not for actual synthesized hardware.
+reg [8*11:1]str; str of 11 byteswide
+
+system tasks:
+
+$<keyword>
+
+$display(); - similar to the printf - inserts new line at the end
+$display without the arguments produces a newline
+'
+%d or %D
+%b or %B
+%s OR %S
+%h or %H - hex
+%c or %C ascii character
+%m or %M - hierarchical name
+%v or %V display strength
+%o or %O
+%e or %E display realnumber in scientfic format
+%f in decimal
+%g or %G display real number in scientific or decimal whichever is shorter
+
+
+$monitor - verilog provides a mechanism to monitor a signal when its value changes 
+it continously monitors the values of the variables or signals specified in the parameter list and displays all parameters
+in the list whenever the value of any one variable or signal changes 
+
+only one monitorng list can be active at a time ,if there are more than one $monitor in your simulation then the last $monitor will be the active statement 
+
+two tasks are used one is monitoron- enable
+and other one is monitoroff-disable
+
+$stop-> stop the simulation
+it puts the design in the interactive mode
+designer can stop and start debugging
+it is used when designer wants to suspend the simulation and examine the values of signals in the design
+
+$finish;
+
+this terminates the simulation
+
+
+
+
+
+
+
+
