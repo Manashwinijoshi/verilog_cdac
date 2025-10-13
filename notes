@@ -1,8 +1,8 @@
 default value of net/wire => z
-
+integer default value = x;
 
 integer stores signed
-reg stores unsigned
+reg stores unsigned, but can be declared as signed 
 
 realnumber constants and real registers -can be specifiedin scientifc and decimal notation
 
@@ -67,6 +67,8 @@ it is used when designer wants to suspend the simulation and examine the values 
 $finish;
 
 this terminates the simulation
+
+
 
 
 
