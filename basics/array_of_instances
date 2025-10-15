@@ -1,0 +1,53 @@
+//array of primitive instances can be designed
+//see instead of writing like 10 insstances , if those instances only differ from each other only by the index of teh vector to which they are connected ,  you can use the array of instances 
+`timescale 1ns / 1ps
+
+module array_of_instances(
+    input [7:0] in1,
+    input [7:0] in2,
+    output [7:0] out
+    );
+
+nand ins[7:0](out,in1,in2);
+
+endmodule
+
+
+
+`timescale 1ns / 1ps
+
+
+module tb_array_of_instances;
+
+	// Inputs
+	reg [7:0] in1;
+	reg [7:0] in2;
+
+	// Outputs
+	wire [7:0] out;
+
+	// Instantiate the Unit Under Test (UUT)
+	array_of_instances uut (
+		.in1(in1), 
+		.in2(in2), 
+		.out(out)
+	);
+
+	initial begin
+//weite the monitor statement here 
+		// Initialize Inputs
+		in1 = 0;
+		in2 = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+        
+		// Add stimulus here
+		
+		in1=8'b10101010;
+		in2=8'b11001111;
+
+	end
+      
+endmodule
+
