@@ -130,6 +130,28 @@ relational operators
 
 > < >= <=
 
+it returns 0 or 1
+if if there are any unknown x or z bits in the operands then the expression takes the value of the x 
+
+z=3'b10x;
+x=3'b100;
+
+z<x will evaluate to x
+
+equality operators
+
+== != === !==
+
+a==b , will give 0 or 1 or if any bit in it as x or z the result will be x
+a!=b same as the above
+
+a===b compares both operans bit by bit , including x or z , results in 1 if the operands match exactly , including x and z , 0 if not . it will never yield in x 
+
+bitwise operators
+~, & , | , ^ , ^~ 
+
+
+
 
 
 
