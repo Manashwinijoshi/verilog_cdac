@@ -89,6 +89,52 @@ now as after 10 ns my computation happens
 in1 value will be 0 and the in2 is 0 so the output is 1 
 
 
+operations::
+
+
+we have manyy different operators
+lets start with the arithmetic operators
+* - + / % **
+
+now if any of the input as x as its one of the bit , then he result will be x 
+example in1=3'b10x
+in2=3'b000;
+
+then my sum=in1+in2;
+will be 3'bxxx;
+
+unary operators:
+
+be careful while using the '-' operator 
+
+see we use it to represent the negative numbers 
+
+example : integer sum= -10/5;
+
+never do : -'d10/5 => is equivalent to the 2's complement of the 'd10 / 5
+// hence an incorrect answer 
+
+so dont use - <size>'<base><number>
+if you are dealing with the negative numbers while operations
+
+----------------------------------------------------------------
+
+logical operators
+
+&& || ! 
+these evaluate to 1 or 0 or x
+
+remember if any operand bit x or z , it is equivalent to x , and is normally treated by simulators as a false condition
+
+relational operators
+
+> < >= <=
+
+
+
+
+
+
 
 
 
