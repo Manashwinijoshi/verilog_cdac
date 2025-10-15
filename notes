@@ -68,8 +68,25 @@ $finish;
 
 this terminates the simulation
 
+// delays
 
+in the assign -> continous assignments
+it controls the time between the change in right hand side operand and when the new value is assigned to the left hand side
 
+3 ways
+
+1-> regular assignment delay
+
+assign #10 out=in1&in2;
+
+basically my left hand side in2&in1 the whole expression will be computed after 10 ns , 
+so if i change these inputs the in between 10 ns , then the output of this is lost 
+
+example at 80 i change my in1 0 to 1 (in2=0)
+and at 85 i change my in1 1 to 0 again (in2=0)
+
+now as after 10 ns my computation happens
+in1 value will be 0 and the in2 is 0 so the output is 1 
 
 
 
