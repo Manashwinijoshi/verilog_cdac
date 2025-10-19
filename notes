@@ -150,6 +150,75 @@ a===b compares both operans bit by bit , including x or z , results in 1 if the 
 bitwise operators
 ~, & , | , ^ , ^~ 
 
+conditional operator 
+(conditional expr)?true_expression:false_expression
+
+if true-> true expression
+false -> false expression
+
+now if the result is x , then both true and false expressions are evaluated and their reults are compared , bit by bit , to return for eacch bit 
+an x if the bits are different and the value of the bits if they are the same 
+
+example: assign res=sel?4'b1101:4'b0111;
+
+if my sel is x;
+
+then my res is 4'bx1x1;
+---------------------------------------
+strcutured procedures : 
+
+always, initial-> each flow starts at the simulation time 0
+
+they cant be nested 
+
+initial -> only once execution
+
+always=> repeated continuously 
+example -> clock generation
+
+inside these blocks we use procedural assignments 
+
+the value placed on a varaible will remain unchanged until another procedural assignment updated the variable with a different value 
+
+the left side of the expression can be reg or integer or real or time, "NO WIRE"
+
+there are two tytpes -> blocking and non blocking
+
+blocking -> in a specified order
+non blocking->they dont block the execution of the other statements , 
+after blocking assignment typically , non blocking are executed last in the time step 
+
+be aware of the race conditions
+
+always@(posedge clk)
+  a=b;
+
+always@(posedge clk)
+   b=a;
+
+here it depends on the simulator , which statement will be executed first 
+so swapping will not occur
+either both will have a or b values (same values in a and b )
+
+but the same with the non blocking gives us different story 
+always@(posedge clk)
+  a<=b;
+
+always@(posedge clk)
+   b<=a;
+
+the values will be swapped , now this is because firstly at the simulation , they both are evalauted and are stored in some temparory thingy 
+then at the end of the time step they are assigned to the r_side 
+
+event in the verilog 
+
+event demo_event; // define
+
+->demo_event   // triggering 
+
+always@(demo_event)//awaits for trigger and then after trigger 
+   //statements 
+
 
 
 
